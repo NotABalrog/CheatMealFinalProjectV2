@@ -1,0 +1,353 @@
+<div class="container" xmlns="http://www.w3.org/1999/html">
+  <div class="row">
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <form class="form-horizontal">
+          <!-- PLAN INPUT FORM START -->
+          <div class="col-lg-4">
+            <legend>
+              About
+            </legend>
+            <article>
+              <h4>
+                Enter in your basic body and goal information and this project will help you visualize
+                the impact of cheat meals on attaining your goals.
+
+                Advanced weight loss calculator. Can use different calculation formula and see how they compare, also
+                can plot out how cheat days impact weight loss/gain efforts.
+
+
+                Use case: Use can enter in different calorie and diet plans and see how they compare on the graph below.
+                All data is metric.
+              </h4>
+              <h4>
+              In order to view in a browser, open the dist file. To examine the code, please look in the zip file for the
+                unminified code.
+              </h4>
+            </article>
+          </div>
+          <fieldset class="col-lg-4">
+
+            <!-- BODY DATA SECTION -->
+            <legend>Step 1: Body Data</legend>
+
+            <!--&lt;!&ndash; Units &ndash;&gt;-->
+            <!--<div class="form-group">-->
+            <!--<label class="col-lg-3 control-label" for="planImperialOrMetric">Units</label>-->
+
+            <!--<div class="col-lg-9">-->
+            <!--<input id="planImperialOrMetric" name="planImperialOrMetric" type="text" placeholder="imperial"-->
+            <!--class="form-control input-md" ng-model="config.perferredUnits">-->
+            <!--<span class="help-block">Imperial or Metric</span>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!-- Height -->
+            <div class="form-group">
+              <label class="col-lg-3 control-label" for="planHeight">Height</label>
+
+              <div class="col-lg-9">
+                <input id="planHeight" name="planHeight" type="text" placeholder="1.82"
+                       class="form-control input-md" ng-model="config.height">
+                <span class="help-block">Height in meters</span>
+              </div>
+            </div>
+
+            <!--Weight-->
+            <div class="form-group">
+              <label class="col-lg-3 control-label" for="planWeight">Weight</label>
+
+              <div class="col-lg-9">
+                <input id="planWeight" name="planWeight" type="number" placeholder="70"
+                       class="form-control input-md" ng-model="config.weight">
+                <span class="help-block">Weight in kilograms</span>
+              </div>
+            </div>
+
+            <!-- Gender-->
+            <div class="form-group">
+              <label class="col-lg-3 control-label" for="planGender">Gender</label>
+
+              <div class="col-lg-9">
+                <input id="planGender" name="planGender" type="text" placeholder="male"
+                       class="form-control input-md" ng-model="config.gender">
+                <span class="help-block">Male or Female</span>
+              </div>
+            </div>
+
+            <!--Body Fat-->
+            <div class="form-group">
+              <label class="col-lg-3 control-label" for="planBodyFat">Body Fat</label>
+
+              <div class="col-lg-9">
+                <input id="planBodyFat" name="planBodyFat" type="text" placeholder=".35"
+                       class="form-control input-md" ng-model="config.bodyFat">
+                <span class="help-block">In the format of decimal, bodyfat percentage. Ex: 20% = .20</span>
+              </div>
+            </div>
+
+            <!--Age-->
+            <div class="form-group">
+              <label class="col-lg-3 control-label" for="planAge">Age</label>
+
+              <div class="col-lg-9">
+                <input id="planAge" name="planAge" type="number" placeholder="25"
+                       class="form-control input-md" ng-model="config.age">
+                <span class="help-block">Age in years</span>
+              </div>
+            </div>
+
+            <!--&lt;!&ndash; Button &ndash;&gt;-->
+            <!--<div class="form-group">-->
+            <!--<div class="col-lg-4 col-centered">-->
+            <!--<button id="bodyDataButton" name="bodyDataButton" class="btn btn-primary">Save Body Data</button>-->
+            <!--</div>-->
+            <!--</div>-->
+
+          </fieldset>
+          <fieldset class="col-lg-4">
+            <!-- Plan Data Form -->
+            <legend>2. Plan Data</legend>
+            <!--Plan Name-->
+            <div class="form-group">
+              <label class="col-lg-3 control-label" for="planDataName">Plan name</label>
+
+              <div class="col-lg-9">
+                <input id="planDataName" name="planDataName" type="text" placeholder="My Cheeto and kale diet"
+                       class="form-control input-md" ng-model="config.planName">
+                <span class="help-block">A name to identify your current plan</span>
+              </div>
+            </div>
+
+            <!--Daily Calories-->
+            <div class="form-group">
+              <label class="col-lg-3 control-label" for="planDataDailyCalories">Daily Calories</label>
+
+              <div class="col-lg-9">
+                <input id="planDataDailyCalories" name="planDataDailyCalories" type="number" placeholder="1800"
+                       class="form-control input-md" ng-model="config.dailyCalories">
+                <span class="help-block">Calories consumed on an average day</span>
+              </div>
+            </div>
+
+            <!-- Activity Level -->
+            <div class="form-group">
+              <label class="col-lg-3 control-label" for="planActivityLevel">Activity Level</label>
+
+              <div class="col-lg-9">
+                <input id="planActivityLevel" name="planActivityLevel" type="number" step="any" min="0"
+                       placeholder="1.4"
+                       class="form-control input-md" ng-model="config.activityLevel">
+                  <span
+                    class="help-block">Used to calculate total energy expenditure, select 1.2 for sedentary,
+                    1.4 for moderately active to 1.8 for extremely active.</span>
+              </div>
+            </div>
+
+            <!--Start Date-->
+            <div class="form-group">
+              <label class="col-lg-3 control-label" for="planStartDate">Start Date</label>
+
+              <div class="col-lg-9">
+                <input id="planStartDate" name="planStartDate" type="text" placeholder="02/22/15"
+                       class="form-control input-md" ng-model="config.startDate">
+                <span class="help-block">Start date of the plan</span>
+              </div>
+            </div>
+            <!--Goal Date-->
+            <div class="form-group">
+              <label class="col-lg-3 control-label" for="planGoalDate">Goal Date</label>
+
+              <div class="col-lg-9">
+                <input id="planGoalDate" name="planGoalDate" type="text" placeholder="05/22/15"
+                       class="form-control input-md" ng-model="config.goalDate">
+                <span class="help-block">Total number of calories consumed </span>
+              </div>
+            </div>
+
+            <!-- BMR Calc Selection -->
+            <!-- Single button -->
+
+            <div class="form-group">
+              <label class="col-lg-3 control-label">BMR Calculator Formula to use</label>
+
+              <div class="col-lg-9">
+                <div class="input-group-btn">
+                  <div class="form-group">
+                    <label class="col-lg-3 control-label">BMR Calculator Formula to use</label>
+
+                    <div class="btn-group btn-group-justified" role="group">
+                      <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default" ng-click="setBMRCalc(1)">Mifflin</button>
+                      </div>
+                      <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default" ng-click="setBMRCalc(2)">Katch</button>
+                      </div>
+                      <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default" ng-click="setBMRCalc(3)">Benedict</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <span class="help-block">Using: {{config.bmrCalcSelection}}</span>
+              </div>
+            </div>
+
+
+            <!-- Add -->
+            <div class="form-group">
+              <div class="col-lg-2"></div>
+              <div class="col-lg-6">
+                <button id="test" name="test" class="btn btn-default"
+                        ng-click="test()">
+                  <span>Test</span>
+                </button>
+              </div>
+              <div class="col-lg-3">
+                <button id="addPlanButton" name="addPlanButton" class="btn btn-primary" ng-click="savePlan(this)">
+                  <span>
+                    Save
+                </span>
+                </button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="col-lg-4">
+              <legend>Plans - Click edit plan to select a cheat day to add</legend>
+              <div ng-repeat="config in planConfigs">
+                <div class="panel panel-default col-lg-12">
+                  <div class="planCard">
+                    <h4>{{config.planName}} with {{config.cheatDays.length}} cheat days</h4>
+                    <button id="editPlan" name="editPlan" class="btn btn-primary"
+                            ng-click="editPlan(this)">
+                      <span>Edit</span>
+                    </button>
+                    <button id="clonePlan" name="editPlan" class="btn btn-primary"
+                            ng-click="clonePlan(this.config)">
+                      <span>Clone</span>
+                    </button>
+                    <button id="removePlan" name="removePlan" class="btn btn-primary"
+                            ng-click="removePlan(this.config)">
+                      <span>Remove</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="btn-wrap">
+                <button id="runAllPlans" name="runAllPlans" class="btn btn-success"
+                        ng-click="run()">
+                  <span>Run all plans</span>
+                </button>
+              </div>
+            </div>
+            <form class="form-horizontal">
+              <fieldset class="col-lg-4">
+                <!-- Recurring Cheat Day -->
+                <legend>3: Add recurring cheat day to: {{config.planName}}</legend>
+
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-lg-4 control-label" for="recurringCheatDayCalories">Calories</label>
+
+                  <div class="col-lg-8">
+                    <input id="recurringCheatDayCalories" name="recurringCheatDayCalories" type="text"
+                           placeholder="4500"
+                           class="form-control input-md" ng-model="cheatDays.recurringCheatDayCalories">
+                    <span class="help-block">Calories consumed </span>
+                  </div>
+                </div>
+
+                <!-- Recurring Cheat Day Frequency-->
+                <div class="form-group">
+                  <label class="col-lg-4 control-label" for="recurringCheatDayFrequency">Frequency:</label>
+
+                  <div class="col-lg-8">
+                    <input id="recurringCheatDayFrequency" name="recurringCheatDayFrequency" type="number"
+                           placeholder="7"
+                           class="form-control input-md" ng-model="cheatDays.recurringCheatDayFrequency">
+                  <span
+                    class="help-block">frequency of this cheat meal, 7 is once a week, 30 is once a month.</span>
+                  </div>
+                </div>
+
+                <!-- Recurring Cheat Day Button -->
+                <div class="form-group">
+                  <div class="col-lg-4 col-centered">
+                    <button id="recurringCheatDayButton" name="recurringCheatDayButton" class="btn btn-primary"
+                            ng-click="addRecurringCheatDay(this)">
+                      Add recurring cheat days
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+              <!-- single cheat day form --!>
+
+                <!-- Single Cheat Day -->
+              <fieldset class="col-lg-4">
+                <legend>4: Add single cheat day to: {{config.planName}}</legend>
+
+                <!--Single Cheat Day Date Picker-->
+                <div class="form-group">
+                  <label class="col-lg-2 control-label" for="recurringCheatDayCalories"></label>
+
+                  <div class="">
+                    <datepicker class="col-lg-6" ng-model="dt" show-weeks="true" min-date="minDate"
+                                max-date="maxDate"></datepicker>
+                  </div>
+                </div>
+
+                <!-- Single Cheat Day Calories-->
+                <div class="form-group">
+                  <label class="col-lg-4 control-label" for="singleCheatDayCalories">Calories</label>
+
+                  <div class="col-lg-8">
+                    <input id="singleCheatDayCalories" name="singleCheatDayCalories" type="text" placeholder="9001"
+                           class="form-control input-md" ng-model="cheatDays.singleCheatDayCalories">
+                  <span
+                    class="help-block">Calories consumed</span>
+                  </div>
+                </div>
+
+                <!-- add single cheat day -->
+                <div class="form-group">
+                  <div class="col-lg-4 col-centered">
+                    <button id="addSingleCheatDayButton" name="addSingleCheatDayButton" class="btn btn-primary"
+                            ng-click="addSingleCheatDay()">
+                    <span>
+                      Add single cheat day
+                    </span>
+                    </button>
+                  </div>
+                </div>
+
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <canvas id="line" class="chart chart-line" data="data"
+                    labels="labels" legend="true" series="series"
+                    click="onClick">
+            </canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

@@ -26,6 +26,7 @@ function Simulator(){
       var dateCalc = new DateCalculator(configs[i]);
 
       var result = {};
+
       result = new Plan(configs[i], changeCalc, dateCalc, graphPlotter, unitConverter).buildMetricPlan()
         .buildMetricGraph().convertMetricPlanToImperial().buildImperialGraph();
 

@@ -1,9 +1,8 @@
 <div class="container" xmlns="http://www.w3.org/1999/html">
   <div class="row">
-
     <div class="panel panel-default">
       <div class="panel-body">
-        <form class="form-horizontal">
+        <form name="planInput" class="form-horizontal" novalidate>
           <!-- PLAN INPUT FORM START -->
           <div class="col-lg-4">
             <legend>
@@ -22,7 +21,8 @@
                 All data is metric.
               </h4>
               <h4>
-              In order to view in a browser, open the dist file. To examine the code, please look in the zip file for the
+                In order to view in a browser, open the dist file. To examine the code, please look in the zip file for
+                the
                 unminified code.
               </h4>
             </article>
@@ -42,13 +42,17 @@
             <!--<span class="help-block">Imperial or Metric</span>-->
             <!--</div>-->
             <!--</div>-->
+
             <!-- Height -->
             <div class="form-group">
               <label class="col-lg-3 control-label" for="planHeight">Height</label>
 
               <div class="col-lg-9">
                 <input id="planHeight" name="planHeight" type="text" placeholder="1.82"
-                       class="form-control input-md" ng-model="config.height">
+                       class="form-control input-md" ng-model="config.height" required>
+                <span class="error" ng-show="planInput.planHeight.$error.required && !planInput.planHeight.$pristine
+                 && submitted">Please enter height</span>
+
                 <span class="help-block">Height in meters</span>
               </div>
             </div>
@@ -59,7 +63,9 @@
 
               <div class="col-lg-9">
                 <input id="planWeight" name="planWeight" type="number" placeholder="70"
-                       class="form-control input-md" ng-model="config.weight">
+                       class="form-control input-md" ng-model="config.weight" required>
+                 <span class="error" ng-show="planInput.planWeight.$error.required && !planInput.planWeight.$pristine
+                 && submitted">Please enter height</span>
                 <span class="help-block">Weight in kilograms</span>
               </div>
             </div>
@@ -70,7 +76,9 @@
 
               <div class="col-lg-9">
                 <input id="planGender" name="planGender" type="text" placeholder="male"
-                       class="form-control input-md" ng-model="config.gender">
+                       class="form-control input-md" ng-model="config.gender" required>
+                  <span class="error" ng-show="planInput.planGender.$error.required && !planInput.planGender.$pristine
+                 && submitted">Please enter height</span>
                 <span class="help-block">Male or Female</span>
               </div>
             </div>
@@ -81,7 +89,9 @@
 
               <div class="col-lg-9">
                 <input id="planBodyFat" name="planBodyFat" type="text" placeholder=".35"
-                       class="form-control input-md" ng-model="config.bodyFat">
+                       class="form-control input-md" ng-model="config.bodyFat" required>
+                 <span class="error" ng-show="planInput.planBodyFat.$error.required && !planInput.planBodyFat.$pristine
+                 && submitted">Please enter height</span>
                 <span class="help-block">In the format of decimal, bodyfat percentage. Ex: 20% = .20</span>
               </div>
             </div>
@@ -92,7 +102,9 @@
 
               <div class="col-lg-9">
                 <input id="planAge" name="planAge" type="number" placeholder="25"
-                       class="form-control input-md" ng-model="config.age">
+                       class="form-control input-md" ng-model="config.age" required>
+                  <span class="error" ng-show="planInput.planAge.$error.required && !planInput.planAge.$pristine
+                 && submitted">Please enter height</span>
                 <span class="help-block">Age in years</span>
               </div>
             </div>
@@ -114,8 +126,11 @@
 
               <div class="col-lg-9">
                 <input id="planDataName" name="planDataName" type="text" placeholder="My Cheeto and kale diet"
-                       class="form-control input-md" ng-model="config.planName">
+                       class="form-control input-md" ng-model="config.planName" required>
+                  <span class="error" ng-show="planInput.planDataName.$error.required && !planInput.planDataName.$pristine
+                 && submitted">Please enter height</span>
                 <span class="help-block">A name to identify your current plan</span>
+
               </div>
             </div>
 
@@ -125,7 +140,9 @@
 
               <div class="col-lg-9">
                 <input id="planDataDailyCalories" name="planDataDailyCalories" type="number" placeholder="1800"
-                       class="form-control input-md" ng-model="config.dailyCalories">
+                       class="form-control input-md" ng-model="config.dailyCalories" required>
+                  <span class="error" ng-show="planInput.planBodyFat.$error.required && !planInput.planBodyFat.$pristine
+                 && submitted">Please enter height</span>
                 <span class="help-block">Calories consumed on an average day</span>
               </div>
             </div>
@@ -137,7 +154,9 @@
               <div class="col-lg-9">
                 <input id="planActivityLevel" name="planActivityLevel" type="number" step="any" min="0"
                        placeholder="1.4"
-                       class="form-control input-md" ng-model="config.activityLevel">
+                       class="form-control input-md" ng-model="config.activityLevel" required>
+                  <span class="error" ng-show="planInput.planBodyFat.$error.required && !planInput.planBodyFat.$pristine
+                 && submitted">Please enter height</span>
                   <span
                     class="help-block">Used to calculate total energy expenditure, select 1.2 for sedentary,
                     1.4 for moderately active to 1.8 for extremely active.</span>
@@ -150,7 +169,9 @@
 
               <div class="col-lg-9">
                 <input id="planStartDate" name="planStartDate" type="text" placeholder="02/22/15"
-                       class="form-control input-md" ng-model="config.startDate">
+                       class="form-control input-md" ng-model="config.startDate" required>
+                    <span class="error" ng-show="planInput.planStartDate.$error.required && !planInput.planStartDate.$pristine
+                 && submitted">Please enter height</span>
                 <span class="help-block">Start date of the plan</span>
               </div>
             </div>
@@ -161,6 +182,8 @@
               <div class="col-lg-9">
                 <input id="planGoalDate" name="planGoalDate" type="text" placeholder="05/22/15"
                        class="form-control input-md" ng-model="config.goalDate">
+                 <span class="error" ng-show="planInput.planGoalDate.$error.required && !planInput.planGoalDate.$pristine
+                 && submitted">Please enter height</span>
                 <span class="help-block">Total number of calories consumed </span>
               </div>
             </div>
@@ -204,14 +227,19 @@
                 </button>
               </div>
               <div class="col-lg-3">
-                <button id="addPlanButton" name="addPlanButton" class="btn btn-primary" ng-click="savePlan(this)">
+                <button id="addPlanButton" name="addPlanButton" class="btn btn-primary"
+                        ng-click="savePlan(this, planInput.$valid)">
                   <span>
                     Save
                 </span>
                 </button>
               </div>
+              <div class="col-lg-12">
+                <h4 ng-show="badSubmit">Not all required fields filled in, please check all inputs and try again</h4>
+              </div>
             </div>
           </fieldset>
+
         </form>
       </div>
     </div>
@@ -247,10 +275,11 @@
                 </button>
               </div>
             </div>
-            <form class="form-horizontal">
+
+            <form name="cheatDaysInput" class="form-horizontal" novalidate>
               <fieldset class="col-lg-4">
                 <!-- Recurring Cheat Day -->
-                <legend>3: Add recurring cheat day to: {{config.planName}}</legend>
+                <legend>3: Add recurring cheat day to: {{lastPlanModified.planName}}</legend>
 
                 <!-- Text input-->
                 <div class="form-group">
@@ -258,8 +287,8 @@
 
                   <div class="col-lg-8">
                     <input id="recurringCheatDayCalories" name="recurringCheatDayCalories" type="text"
-                           placeholder="4500"
-                           class="form-control input-md" ng-model="cheatDays.recurringCheatDayCalories">
+                           placeholder=""
+                           class="form-control input-md" ng-model="cheatDays.recurringCheatDayCalories" required>
                     <span class="help-block">Calories consumed </span>
                   </div>
                 </div>
@@ -270,8 +299,8 @@
 
                   <div class="col-lg-8">
                     <input id="recurringCheatDayFrequency" name="recurringCheatDayFrequency" type="number"
-                           placeholder="7"
-                           class="form-control input-md" ng-model="cheatDays.recurringCheatDayFrequency">
+                           placeholder=""
+                           class="form-control input-md" ng-model="cheatDays.recurringCheatDayFrequency" required>
                   <span
                     class="help-block">frequency of this cheat meal, 7 is once a week, 30 is once a month.</span>
                   </div>
@@ -281,21 +310,31 @@
                 <div class="form-group">
                   <div class="col-lg-4 col-centered">
                     <button id="recurringCheatDayButton" name="recurringCheatDayButton" class="btn btn-primary"
-                            ng-click="addRecurringCheatDay(this)">
+                            ng-click="addRecurringCheatDay(cheatDaysInput.$valid)">
                       Add recurring cheat days
                     </button>
                   </div>
+                  <div class="col-lg-12">
+                    <h4 ng-show="recurringCheatMealBadSubmitInvalidInput">Not all required fields filled in. Please
+                      enter calories and frequency.</h4>
+                  </div>
+                  <div class="col-lg-12">
+                    <h4 ng-show="recurringCheatMealBadSubmitNoPlanSelected">No plan selected to add cheat day to. Please
+                      select a plan from the left.</h4>
+                  </div>
                 </div>
               </fieldset>
-              <!-- single cheat day form --!>
+            </form>
+            <!-- single cheat day form --!>
 
-                <!-- Single Cheat Day -->
+              <!-- Single Cheat Day -->
+            <form name="singleCheatDayInput" class="form-horizontal" novalidate>
               <fieldset class="col-lg-4">
-                <legend>4: Add single cheat day to: {{config.planName}}</legend>
+                <legend>4: Add single cheat day to: {{lastPlanModified.planName}}</legend>
 
                 <!--Single Cheat Day Date Picker-->
                 <div class="form-group">
-                  <label class="col-lg-2 control-label" for="recurringCheatDayCalories"></label>
+                  <label class="col-lg-2 control-label" for="singleCheatDayCalories"></label>
 
                   <div class="">
                     <datepicker class="col-lg-6" ng-model="dt" show-weeks="true" min-date="minDate"
@@ -308,7 +347,7 @@
                   <label class="col-lg-4 control-label" for="singleCheatDayCalories">Calories</label>
 
                   <div class="col-lg-8">
-                    <input id="singleCheatDayCalories" name="singleCheatDayCalories" type="text" placeholder="9001"
+                    <input id="singleCheatDayCalories" name="singleCheatDayCalories" type="text"
                            class="form-control input-md" ng-model="cheatDays.singleCheatDayCalories">
                   <span
                     class="help-block">Calories consumed</span>
